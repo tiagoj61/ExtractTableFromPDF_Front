@@ -1,0 +1,94 @@
+.header-dashboard {
+    background-size: auto;
+    height: 5rem;
+}
+
+.div-header-text {
+    padding: 2rem 3rem 2rem 3rem;
+}
+
+.header-text {
+    color: #1D1429;
+    margin: 0px 0px 0px 0px;
+}
+
+.div-form-dashboard {
+    display: grid !important;
+    padding: 3rem 5rem 3rem 3.5rem;
+}
+
+.form-dashboard {
+    width: auto;
+}
+
+.hr-cadastro {
+    border-top: 5px solid #332545;
+    margin: 0px 0px 0px 0px;
+}
+
+.div-dashboard-bg {
+    background-color: #FFFFFF;
+}
+
+.login-form {
+    display: flex;
+}
+
+tr.detail-row {
+    height: 0;
+}
+
+table {
+    width: auto;
+    display: block !important
+}
+
+.mat-table {
+    margin: 2rem 3rem 0rem 3rem;
+    /*overflow-x: scroll;*/
+}
+.table-scroll {
+    overflow-x:scroll;
+    white-space: nowrap;
+}
+.mat-header-cell {
+    justify-content: center;
+    align-items: center;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.12);
+    border-bottom-color: rgba(0, 0, 0, 0.12);
+}
+
+.mat-header-row {
+    border-bottom-color: transparent;
+}
+
+.mat-cell {
+    justify-content: left;
+    align-items: left;
+    text-overflow: inherit;
+    /* overflow-x: scroll; */
+    white-space: pre;
+    display: block;
+    text-align: left;
+
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: rgba(0, 0, 0, 0.12);
+
+}
+
+.div-btns-func-tab {
+    padding: 3rem 5rem 3rem 3.5rem;
+}
+
+.tab-header-row-1 {
+    background-color: #F9F9F9;
+}
+
+.tab-header-row-2 {
+    background-color: #F9F9F9;
+}

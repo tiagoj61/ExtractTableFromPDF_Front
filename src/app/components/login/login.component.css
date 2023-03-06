@@ -1,0 +1,67 @@
+  .input-login-fields {
+    max-width: 40rem;
+    text-align: -webkit-center;
+    margin: auto;
+  }
+
+  .mat-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: auto;
+    align-self: center;
+  }
+
+  .login-image {
+    background-image: url('../../../assets/img/simple-user-icon.png');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    align-self: center;
+    margin: 30px;
+  }
+
+  .login-form {
+    /* background-color: rgb(175, 175, 175); */
+  }
+
+  section {
+    display: table;
+  }
+
+  .login-buttons-row {
+    display: table-cell;
+    width: 490px;
+  }
+
+  .login-buttons-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+
+  .btn-primary {
+    margin: 8px 8px 8px 0;
+    width: 15rem;
+    flex: 1 1 auto;
+  }
+
+  .btn-link-cadastro {
+    margin: 8px 8px 8px 0;
+    width: 15rem;
+    flex: 1 1 auto;
+  }
+
+  .login-logo {
+    background-image: url('../../../assets/img/f4s-circular-logo.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 150px;
+    height: 150px;
+    margin: 2rem;
+  }
+
+  .div-login-logo {
+    text-align: center;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+  }

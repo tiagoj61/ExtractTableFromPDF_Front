@@ -1,0 +1,11 @@
+<table mat-table [dataSource]="burdens" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="burden">
+    <th mat-header-cell *matHeaderCellDef> cargo </th>
+    <td mat-cell *matCellDef="let element">{{element.burden}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+  </tr>
+</table>

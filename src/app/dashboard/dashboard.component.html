@@ -1,0 +1,97 @@
+<div class="div-dashboard-bg">
+    <div class="header-dashboard"></div>
+    <div class="div-header-text">
+        <h1 class="header-text">DASHBOARD</h1>
+    </div>
+    <hr class="hr-cadastro">
+    <form class="div-form-dashboard" fxLayoutAlign="stretch" [formGroup]="form" (ngSubmit)="consultarClick()"
+        (keyup.enter)="consultarClick()">
+
+        <div class="div-header-tab">
+            <h1 class="header-tab-text">Estatísticas</h1>
+        </div>
+
+        <div class=" login-form">
+            <div class="mat-form-col1">
+                <mat-form-field class="form-dashboard" appearance="outline" floatLabel="always">
+                    <mat-label>Razão Social</mat-label>
+                    <input matInput formControlName="name" placeholder="ex. Fin4SHE">
+                    <!-- <mat-hint>Razão Social da dashboard a Cadastrar</mat-hint> -->
+                </mat-form-field>
+            </div>
+            <div class="mat-form-col2">
+                <mat-form-field class="form-dashboard" appearance="outline" floatLabel="always">
+                    <mat-label>Ano</mat-label>
+                    <input matInput formControlName="year" placeholder="ex. 2010">
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div class="div-btns-cadastro">
+            <button class="btn-dashboard-cadastro-cancelar" type="button" mat-flat-button
+                color="primary">Limpar</button>
+            <button class="btn-dashboard-cadastro-cadastrar" type="submit" mat-flat-button
+                color="accent">Consultar</button>
+        </div>
+    </form>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-scroll" multiTemplateDataRows>
+
+        <ng-container *ngFor="let column of dispColsDetails, let colIndex = index" [cdkColumnDef]="column.colPosition">
+
+            <mat-header-cell [ngStyle]="{'min-width': (column.colName=='Empresa' || column.colName=='Cargo') ? '20rem' : '10rem',
+            'max-width': (column.colName=='Empresa') ? '25rem' : 'auto'}" text-align="left" *cdkHeaderCellDef>
+
+                <mat-checkbox [style.visibility]="colIndex > 0 ? 'hidden' : ''" [style.marginRight.rem]="2"
+                    [checked]="selection.selected.length == getRowsTotLines() && selection.hasValue()"
+                    (change)="toggleAll()"></mat-checkbox>
+
+                {{ column.colName }}
+
+            </mat-header-cell>
+
+            <mat-cell [ngStyle]="{'min-width': (column.colPosition=='0' || column.colPosition=='1') ? '20rem' : '10rem',
+                'max-width': (column.colPosition=='0') ? '25rem' : 'auto'}"
+                text-align="left" *cdkCellDef="let row, let i = dataIndex">
+
+
+                <mat-checkbox [style.visibility]="colIndex > 0 ? 'hidden' : ''" [style.marginLeft.px]="row.level * 6"
+                    (change)="rowCheckToggle(i)" [checked]="isRowSelected(i)"></mat-checkbox>
+
+
+                <button mat-icon-button [style.visibility]="!row.expandable || colIndex > 0 ? 'hidden' : ''"
+                    [style.marginLeft.px]="row.level * 32 * 0" (click)="treeRowControl.toggle(row)">
+                    <mat-icon class="mat-icon-rtl-mirror">
+                        {{treeRowControl.isExpanded(row) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                </button>
+
+                {{row.values[colIndex].value}}
+
+            </mat-cell>
+
+        </ng-container>
+
+        <ng-container *ngFor="let dcolumn of displayedColumns" [cdkColumnDef]="dcolumn">
+            <mat-header-cell
+                [ngStyle]="{'min-width': (dcolumn=='Empresa') ? '40rem' : '50rem', 'max-width': (dcolumn=='Empresa') ? '25rem' : 'auto'}"
+                [attr.colSpan]="2" *cdkHeaderCellDef>
+                {{ dcolumn }}
+            </mat-header-cell>
+        </ng-container>
+
+        <mat-header-row class="tab-header-row-1" *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-header-row class="tab-header-row-2" *matHeaderRowDef="colsDetIds"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: colsDetIds;"></mat-row>
+
+    </table>
+
+    <div class="div-btns-func-tab">
+        <button class="btn-dashboard-func-limpar" type="button" mat-flat-button color="primary"
+            (click)="clearDashboardTab()">Limpar</button>
+        <button class="btn-dashboard-func-baixar" type="button" mat-flat-button color="accent"
+            (click)="downloadData()">Baixar .xlsx</button>
+    </div>
+
+</div>

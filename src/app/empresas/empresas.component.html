@@ -1,0 +1,29 @@
+<div class="div-empresa-bg">
+    <div class="header-empresa">
+        <button mat-flat-button type="submit" routerLink="../register" class="btn-novo-cadastro" style="color:#1D1429"
+            (click)="onClick()">+
+            Novo
+            Cadastro</button>
+    </div>
+    <div class="div-header-text">
+        <h1 class="header-text">CADASTRO DE EMPRESA</h1>
+    </div>
+    <hr class="hr-cadastro">
+    <div class="div-form-empresa">
+        <div>
+            <label>Razão Social</label>
+        </div>
+      <form fxLayout="column" class="login-form" fxLayoutAlign="stretch" [formGroup]="form"
+            (ngSubmit)="cadastrarClick()" (keyup.enter)="cadastrarClick()">
+        <mat-form-field class="form-empresa" appearance="outline">
+            <mat-label>Razão Social</mat-label>
+            <input matInput formControlName="name" placeholder="ex. Fin4SHE">
+            <mat-hint>Razão Social da Empresa a Cadastrar</mat-hint>
+        </mat-form-field>
+        <div class="div-btns-cadastro">
+            <button class="btn-empresa-cadastro-cancelar" type="button" mat-stroked-button color="primary">Cancelar</button>
+            <button class="btn-empresa-cadastro-cadastrar" mat-flat-button color="primary">{{butname}}</button>
+        </div>
+      </form>
+    </div>
+</div>

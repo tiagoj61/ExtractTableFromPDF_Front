@@ -1,0 +1,46 @@
+<div class="div-login-logo">
+    <img class="login-logo">
+</div>
+<div class="input-login-fields">
+    <mat-card class="mat-card">
+        <mat-card-content>
+            <form fxLayout="column" class="login-form" fxLayoutAlign="stretch" [formGroup]="form"
+                (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+
+                <div mat-card-avatar class="login-image"></div>
+
+                <mat-form-field appearance="outline" class="login-field">
+                    <mat-label class="login-field-input">Username or Email</mat-label>
+                    <input matInput placeholder="Username" formControlName="username" class="login-field-input">
+                    <div *ngIf="submitted && f?.['username']?.errors" class="invalid-feedback">
+                        <div *ngIf="f?.['username']?.errors?.['required']">Username is required</div>
+                    </div>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="login-field">
+                    <mat-label class="login-field-input">Password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"
+                        class="login-field-input">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+
+                <section>
+                    <div class="login-buttons-row">
+                        <button mat-flat-button color="accent" type="submit" class="btn-primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Login
+                        </button>
+
+                        <!-- <button mat-flat-button color="primary" type="submit" routerLink="../register"
+                            class="btn-link-cadastro">
+                            Cadastro
+                        </button> -->
+                    </div>
+                </section>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

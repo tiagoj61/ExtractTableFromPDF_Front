@@ -1,0 +1,55 @@
+<div class="div-relatorio-bg">
+    <div class="header-relatorio"></div>
+    <div class="div-header-text">
+        <h1 class="header-text">Extração relatório</h1>
+    </div>
+    <hr class="hr-cadastro">
+    <form class="div-form-relatorio" style="" [formGroup]="form" (ngSubmit)="cadastrarClick()"
+        (keyup.enter)="cadastrarClick()">
+        <div class=" login-form">
+            <div class="mat-form-col1 align-cards"> 
+
+                <mat-form-field class="form-relatorio" appearance="outline" floatLabel="always">
+                    <mat-label>Razão Social</mat-label>
+                    <mat-select [(value)]="id" formControlName="compni" (selectionChange)="setNewUser($event)" (ngModel)="companis">
+                      <mat-option *ngFor="let user of companis" [value]="user.id">
+                        {{user.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              
+
+                <mat-form-field class="form-relatorio" appearance="outline" floatLabel="always">
+                    <mat-label>Numeração da Página</mat-label>
+                    <input matInput formControlName="pagNum" placeholder="ex. 10">
+                    <!-- <mat-hint>Razão Social da relatorio a Cadastrar</mat-hint> -->
+                </mat-form-field>
+
+            </div>
+
+            <div class="mat-form-col2 align-cards">
+
+                <mat-form-field class="form-relatorio" appearance="outline" floatLabel="always">
+                    <mat-label>Link do Documento</mat-label>
+                    <input matInput formControlName="link"
+                        placeholder="ex. https://www.teste.com/relatorios/ano/report.pdf">
+                    <!-- <mat-hint>Link do Relatório a ser Processado</mat-hint> -->
+                </mat-form-field>
+
+                <mat-form-field class="form-relatorio" appearance="outline" floatLabel="always">
+                    <mat-label>Ano do Documento</mat-label>
+                    <input matInput formControlName="year" placeholder="ex. 2010">
+                    <!-- <mat-hint>Razão Social da relatorio a Cadastrar</mat-hint> -->
+                </mat-form-field>
+
+            </div>
+        </div>
+
+        <div class="div-btns-cadastro bts">
+            <button class="btn-relatorio-cadastro-cancelar" type="button" mat-flat-button
+                color="primary" (click)="clearFields()">Limpar</button>
+            <button class="btn-relatorio-cadastro-cadastrar btn-cadastrar" type="submit" mat-flat-button
+                >Solicitar extração</button>
+        </div>
+    </form>
+</div>

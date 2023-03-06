@@ -1,0 +1,38 @@
+<!-- nav -->
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav> -->
+
+<!-- side nav -->
+<!-- <app-sidenav *ngIf="user" (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav> -->
+
+<!-- alert -->
+<alert></alert>
+
+
+<!-- side nav -->
+<app-sidenav *ngIf="user" (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+
+
+<!-- body -->
+<app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-body>
+
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ user }"> -->
+    <!-- <alert></alert> -->
+</div>
+
+
+<!-- credits -->
+<div class="text-center mt-4">
+    <p>
+        <a href="https://sites.google.com/lecatita" target="_top">₢Lecatita 2022</a>
+    </p>
+</div>
+
+<router-outlet></router-outlet>

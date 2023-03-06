@@ -1,0 +1,93 @@
+.btn-novo-cadastro {
+    background-color: #D9D9D9;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 1rem 3rem 1rem 3rem;
+    text-align: right;
+    font-size: 24px;
+    font-weight: 300;
+}
+.align-center{
+    text-align: center;
+}
+.justify-center{
+    justify-content: center;
+}
+
+.btn-novo-cadastro:hover {
+    background-color: #919191;
+    transition-duration: 0.5s;
+}
+
+.header-empresa {
+    background-color: #D9D9D9;
+    background-size: auto;
+    height: 5rem;
+}
+
+.div-header-text {
+    padding: 2rem 3rem 2rem 3rem;
+}
+
+.header-text {
+    color: #1D1429;
+    margin: 0px 0px 0px 0px;
+}
+
+.hr-cadastro {
+    border-top: 5px solid #332545;
+    margin: 0px 0px 0px 0px;
+}
+
+.div-form-empresa {
+    padding: 3rem 5rem 3rem 3.5rem;
+}
+
+.form-empresa {
+    width: 100%;
+}
+
+.div-btns-cadastro {
+    text-align: right;
+}
+
+.div-btns-cadastro .mat-button-base {
+    margin: 1rem .5rem 1rem .5rem;
+    min-width: 11rem;
+    min-height: 3.5rem;
+}
+
+.div-empresa-bg {
+    background-color: #FFFFFF;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-elevation-z8 {
+    margin-top: 10rem;
+}
+
+th {
+    background-color: #673AB7;
+    color: #FFFFFF;
+}
+
+tr.mat-header-row {
+    background-color: #673AB7;
+}
+td, th{
+    border-bottom-width: 0px !important;
+   
+    border-top-width: 0px !important;
+
+}
+
+tr{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    
+
+}
